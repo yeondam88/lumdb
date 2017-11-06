@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const Movie = props => (
+const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
+
+const Movie = ({ movie }) => (
   <div>
-    <h3>{props.movie.title}</h3>
+    <Link to={`/${movie.id}`}>
+      <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
+    </Link>
   </div>
 );
 
